@@ -15,6 +15,8 @@ Chihhung Lin\\
 A53093906\\
 \And
 Yi-Shu Tai \\
+A53071463\\
+yitai@eng.ucsd.edu
 }
 
 
@@ -76,7 +78,39 @@ Our training procedure is the listed as follow:
      \caption{test accuracy vs iterations}
     \end{minipage}
 \end{figure}
+
+
+
 \section{Experiment with preprocessing the input data}
+(a) It took about 13000 iterations to hit the $0.39$ accuracy, while the pervious one took about 20000 iterations to converage in accuracy. Also, its test accuracy outperformed the previous one ($0.39$ to $0.25$).
+
+\begin{figure}[H]
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \includegraphics[scale=0.5]{netmean.png}
+        \caption{testing accuracy vs training iteration}
+    \end{minipage}
+\end{figure}
+(b) The performance went down as the number of images went down. We got $0.366$ on 300 images per class and $0.26$ on 100 images per class. The result aligned with "more data, better generalization"
+\begin{figure}[H]
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \includegraphics[scale=0.35]{netmean_per300.png}
+        \caption{testing accuracy vs training iteration (300 images per class)}
+    \end{minipage}
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \includegraphics[scale=0.35]{netmean_per100.png}
+        \caption{testing accuracy vs training iteration (100 images per class)}
+    \end{minipage}
+\end{figure}
+
+
+
+
+
+
+
 \section{Experiment with optimization methods}
 (a) Stochastic Gradient Descent
 \begin{figure}[H]
@@ -170,5 +204,17 @@ As we can observe in the figure, with more hidden layers, the performance is rou
 \end{figure}
 As we can observe in the figure, with well-trained model, the network converges very fast and is generalize well.
 \section{Feature visualization}
-
+Figures below show the visualization of layer 1 (32 filters) and layer 2($32\times32$ filters) of our network. They look totally different.
+\begin{figure}[H]
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \includegraphics[scale=2.0]{layer1.png}
+        \caption{Feature visualization of layer 1}
+    \end{minipage}
+    \begin{minipage}{0.5\linewidth}
+        \centering
+        \includegraphics[scale=2.0]{layer2.png}
+     \caption{Feature visualization of layer 2}
+    \end{minipage}
+\end{figure}
 \end{document}
